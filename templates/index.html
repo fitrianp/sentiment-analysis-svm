@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Akhir Microcredential</title>
+  <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="static/styling.css">
+  <script src="static/js/script.js" defer></script>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container" id="navbar">
+      <div class="navbar-header">
+        <a href="index.html" class="navbar-brand navbar-link"><img src="static/img/logo4.png" width="250"></a>
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      </div>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li role="presentation"><a href="#home">HOME</a></li>
+          <li role="presentation"><a href="#about_us">ABOUT US</a></li>
+          <li role="presentation"><a href="#team">TEAM</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar -->
+
+  <!-- jumbotron -->
+  <div id="background">
+  </div>
+  <!-- jumbotron -->
+
+  <!-- Sentiment Analysis -->
+  <div id="home">
+    <div class="isi">
+      <div class="container atas">
+        <h1><strong>SENTIMENT ANALYSIS</strong></h1>
+        <h4>Enter the Text to get the Sentiment</h4>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-2 col-xs-2">
+            <form id="form-sentimen" action="predict" method="POST" class="form" enctype="multipart/form-data">
+              <div class="text">
+                <h1 class="gmbr-team"> <img src="static/img/comment.png" width="40px"></h1>
+                <label for="exampleInputEmail1" class="form-label">Enter text here:</label>
+                <input type="text" class="form-control" name="Reviews" placeholder="Enter your text here!"></input>
+                <input type="submit" class="btn btn-info" name="submit" id="btn"></input>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-2 col-xs-2">
+            <h1 class="gmbr-team"> <img src="static/img/research.png" width="40px"></h1>
+            <h3>HASIL PREDIKSI</h3>
+            <h5><strong>Sentimen dari text : </strong></h5> <h2>{{ Reviews}} </h2>
+            <div>
+              <h5>Menunjukan hasil </h5>
+              {% if prediction == 1%}
+              <h2 style="color:blue;">Positif</h2>
+              {% elif prediction == 0%}
+              <h2 style="color:red;">Negatif</h2>
+              {% endif %}
+            
+            </div>
+          </div>
+      </div>
+    </div>
+  <!-- Sentiment Analysis -->
+
+  <!-- About Us -->
+  <div id="about_us">
+    <div class="isi">
+      <div class="container atas">
+        <h1>ABOUT US</h1>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <p class="text-justify"><strong>Website Sentimen Analysis ini merupakan hasil luaran dari Tugas Akhir Program Microcredential Certification untuk Data Scientist. 
+              Kami merupakan bagian dari peserta pada host ITB dari Kelas ITB-05, Kelompok 5. 
+              Website ini merupakan simulasi untuk mengetahui analisis sentimen dengan metode SVM dari suatu produk masker dari marketplace shopee. 
+              Dimana memprediksi sentimen dari suatu produk tersebut apakah termasuk komentar positif atau negatif. 
+              Webiste bertujuan untuk memenuhi pelatihan atau sebagai keluaran dari pelatihan associate data scientist microcredential.</strong></p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <h1 class="gmbr-team"> <img src="static/img/team.png" width="400px"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- About Us --> 
+
+  <!-- Team -->
+  <div id="team" class="container bawah">
+    <h1>Team Kelompok 5</h1>
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><img class="img-circle" src="static/img/fitri2.jpg" width="200px">
+        <h3>FITRIA NABILAH PUTRI</h3>
+        <p class="text-center"><strong>Universitas Trisakti</strong></p>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><img class="img-circle" src="static/img/tharif.jpeg" width="200px">
+        <h3>M. THARIF ARKANDANA</h3>
+        <p class="text-center"><strong>Politeknik Statistika STIS</strong></p>
+      </div><div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><img class="img-circle" src="static/img/evi.jpg" width="200px">
+        <h3>EVI FAUZIYARI</h3>
+        <p class="text-center"><strong>Universitas Negeri Yogyakarta</strong></p>
+      </div>
+    </div>
+  </div>
+  <!-- Team -->
+
+  <!-- Footer-->
+  <div id="about">
+    <div class="container footer">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <h1> <img src="static/img/logo2.png" width="250px"></h1>
+        <h2>About Us</h2>
+        <p>Website Sentimen Analysis ini sebagai tugas dari Program Microcredential khususnya oleh <br><strong>Tim kami dari kelompok 5 kelas ITB-05</strong></br></p>
+      </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <h2>Newsletter Subscription</h2>
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control" value="Your Email">
+            <div class="input-group-btn">
+              <button class="btn btn-primary" type="submit">Subscribe </button>
+            </div>
+          </div>
+          <div id="icon"><i class="fa fa-instagram"></i><i class="fa fa-facebook-official"></i><i class="fa fa-twitter-square"></i><i class="fa fa-youtube-play"></i></div>
+        </div>
+    </div>
+  </div>
+  <!-- Footer -->
+
+  <!-- kaki -->
+  <div id="kaki">
+    <div class="container">
+      <h4 class="text-center">ITB-05 | Kelompok 5. © 2021</h4>
+    </div>
+  </div>
+  <!-- kaki -->
+  <script src="static/js/jquery.min.js"></script>
+  <script src="static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
